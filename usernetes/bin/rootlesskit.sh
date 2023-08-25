@@ -39,7 +39,7 @@ if [[ $_U7S_CHILD == 0 ]]; then
 	rootlesskit \
 		--state-dir $rk_state_dir \
 		--net=slirp4netns --mtu=65520 --disable-host-loopback --slirp4netns-sandbox=true --slirp4netns-seccomp=true \
-		--port-driver=builtin \
+		--port-driver=slirp4netns \
 		--copy-up=/etc --copy-up=/etc/sysconfig/ --copy-up=/run --copy-up=/var/lib --copy-up=/opt \
 		--copy-up=/var/lib/crio \
 		-copy-up=/usr/libexec/ \
