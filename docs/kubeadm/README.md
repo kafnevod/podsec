@@ -42,7 +42,7 @@ init-флаг          | join-флаг     | Поддержка
 --help: (-h:) | --help: (-h:) |
 --ignore-preflight-errors: | --ignore-preflight-errors: |
 --image-repository: | **-**  |
---kubernetes-version | **-**  |
+--kubernetes-version: | **-**  |
 --node-name: | --node-name: |
 --patches: | --patches: |
  --pod-network-cidr: | **-**  |
