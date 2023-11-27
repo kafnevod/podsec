@@ -28,8 +28,8 @@ init-флаг          | join-флаг     | Поддержка
 --apiserver-advertise-address: | --apiserver-advertise-address |
 --apiserver-bind-port: | --apiserver-bind-port: |
 --cert-dir: | **-** |                                 
---certificate-key | --certificate-key |
---config string | --config string |
+--certificate-key: | --certificate-key: |
+--config: | --config: |
 --control-plane-endpoint: | **-**  |
  **-** | --control-plane |
  --cri-socket: | --cri-socket: |
