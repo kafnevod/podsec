@@ -12,7 +12,7 @@ phase              | phase             |
 
 init-флаг          | join-флаг     | Поддержка 
 -------------------|-------------------|-------------
--v:                | -v:               | **V**
+-v:                | -v:               | **Y**
 --add-dir-header:  | --add-dir-header: |
 --log-file         | --log-file:       |
 --log-file-max-size:| --log-file-max-size: |
