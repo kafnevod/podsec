@@ -14,7 +14,7 @@ init-флаг          | join-флаг     | Поддержка
 -------------------|-------------------|-------------
 -v:                | -v:               | **Y**
 --add-dir-header:  | --add-dir-header: |
---log-file         | --log-file:       |
+--log-file:         | --log-file:       |
 --log-file-max-size:| --log-file-max-size: |
 --one-output:       | --one-output:    |
 --rootfs:           | --skip-log-headers: |
