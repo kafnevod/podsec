@@ -25,3 +25,34 @@ init-флаг          | join-флаг     | Поддержка
 
 init-флаг          | join-флаг     | Поддержка 
 -------------------|-------------------|-------------
+--apiserver-advertise-address: | --apiserver-advertise-address |
+--apiserver-bind-port | --apiserver-bind-port |
+--cert-dir: | **-** |                                 
+--certificate-key | --certificate-key |
+--config string | --config string |
+--control-plane-endpoint: | **-**  |
+ **-** | --control-plane |
+ --cri-socket: | --cri-socket: |
+ **-**  | --discovery-file: |
+ **-**  | --discovery-token: |
+ **-**  | --discovery-token-ca-cert-hash: | 
+ **-**  | --discovery-token-unsafe-skip-ca-verification | 
+--dry-run | --dry-run |
+--feature-gates: | **-**  |
+--help: (-h:) | --help: (-h:) |
+--ignore-preflight-errors: | --ignore-preflight-errors: |
+--image-repository: | **-**  |
+--kubernetes-version | **-**  |
+--node-name: | --node-name: |
+--patches: | --patches: |
+ --pod-network-cidr: | **-**  |
+ --service-cidr: | **-**  |
+ --service-dns-domain: | **-**  |
+ --skip-certificate-key-print | **-**  |
+ --skip-phases: | --skip-phases: |
+ --skip-token-print | **-**  |
+ **-**  | --tls-bootstrap-token: |
+ --token: | --token: |
+ --token-ttl: | **-**  |
+ --upload-certs | **-**  |
+ 
