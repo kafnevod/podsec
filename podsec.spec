@@ -64,6 +64,7 @@ Requires: cri-tools
 %filter_from_requires /kubernetes-client/d
 %filter_from_requires /kubernetes-kubeadm/d
 %filter_from_requires /kubernetes-kubelet/d
+%filter_from_requires /\/etc\/kubernetes\/kubelet/d
 
 %description k8s
 This package contains utilities for:
@@ -196,13 +197,15 @@ rm -rf %u7s_admin_homedir/.lpoptions \
 %_mandir/man?/podsec-k8s-rbac-*
 
 %files inotify
+%exclude %nagiosdir
+%exclude %nagios_plugdir
 %nagios_plugdir/podsec-inotify-*
 %_bindir/podsec-inotify-*
 %_mandir/man?/podsec-inotify-*
 %_unitdir/podsec-inotify-*
 %exclude %_unitdir/u7s.service
-%dir %attr(0750,%u7s_admin_usr,%u7s_admin_grp) %nagiosdir
-%dir %attr(0750,%u7s_admin_usr,%u7s_admin_grp) %nagios_plugdir
+# %dir %attr(0750,%u7s_admin_usr,%u7s_admin_grp) %nagiosdir
+# %dir %attr(0750,%u7s_admin_usr,%u7s_admin_grp) %nagios_plugdir
 
 %files dev
 %_bindir/podsec-save-oci
