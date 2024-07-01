@@ -14,7 +14,7 @@ trivyUserImages() {
   shift
   for image
   do
-    message=$(trivyCheckImage "podsec-inotify-check-vuln" $image )
+    message=$(trivyCheckImage $PROGNAME $image )
     if [ "$?" -gt 0  -a -n "$MAILTO" ]
     then
       echo "$message" |
@@ -23,6 +23,7 @@ trivyUserImages() {
   done
 }
 
+export PROGNAME=$(basename $0)
 export MAILTO=
 if [ $# -ge 2 ]
 then
