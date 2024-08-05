@@ -17,6 +17,7 @@ BuildArch: noarch
 
 Source: %name-%version.tar
 
+BuildRequires(pre): rpm-macros-branch
 BuildRequires(pre): rpm-macros-systemd
 BuildRequires(pre): libsystemd-devel
 Requires: podman >= 4.4.2
@@ -126,6 +127,8 @@ Monitoring templates for Nagios defining services to monitor
 various Podsec events.
 
 %prep
+echo "branch_release=%branch_release=%_branch_release=%%branch_release"
+echo "_configure_platform=%_configure_platform _configure_target =%_configure_target "
 %setup
 
 %build
@@ -238,6 +241,12 @@ ln -sf usernetes/containers . 2>&1 ||:
 %config(noreplace) %_sysconfdir/nagios/nrpe-commands/podsec-commands.cfg
 
 %changelog
+* Mon Aug 05 2024 Alexey Kostarev <kaf@altlinux.org> 1.1.6-alt2
+- 1.1.6
+
+* Mon Aug 05 2024 Alexey Kostarev <kaf@altlinux.org> 0.1.6-alt2
+- 0.1.6
+
 * Thu Aug 01 2024 Alexey Kostarev <kaf@altlinux.org> 1.1.6-alt2
 - 1.1.6
 
