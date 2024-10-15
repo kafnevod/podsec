@@ -1,8 +1,11 @@
 #!/bin/bash
+export TEXTDOMAINDIR='/usr/share/locale'
+export TEXTDOMAIN='podsec-k8s'
 
+export PROGRAMM=$0
 if [ $USER != 'root' -o $(id -u) != 0 -o $(id -g) != 0 ]
 then
-  echo "Скрипт $0 должен запускаться от пользователя root"
+  echo "$(gettext 'Script') $PROGRAMM $(gettext 'must be run as root user')" >&2
   exit 1
 fi
 
@@ -16,7 +19,7 @@ setRegistryName # устанавливает имя регистратора о�
 
 
 format() {
-  echo -e "Формат:\n$0 [-v [0-9]] [init|join] [<init|join-параметр> ...]" >&2
+  echo "$(gettext 'FORMAT') [-v [0-9]] [init|join] [<init|join-параметр> ...]" >&2
 }
 
 source /etc/podsec/u7s/env/u7s_flags
@@ -96,7 +99,7 @@ getKuberImages $(uname -m ) '/share/usernetes/containers/storage/' u7s-admin
 etcdDataDir='/var/lib/podsec/u7s/etcd/member'
 if [ -d  $etcdDataDir ]
 then
-  echo -ne "На сервере обнаружен каталог данных etcd-кластера $etcdDataDir от предыдущего разворачивания. Очистить каталог? y/N: "
+  echo "$(gettext 'An etcd cluster data directory was found on the server') $etcdDataDir $(gettext 'from previous deployment. Clear directory? y/N'):" >&2
   read reply
   if [ "$reply" = 'y' ]
   then
@@ -232,7 +235,7 @@ cp /etc/podsec/u7s/config/ENV /etc/podsec/u7s/config/env
 envDir="$XDG_CONFIG_HOME=/var/lib/u7s-admin/.config/usernetes"
 # Настройка использования образа $U7S_REGISTRY/U7S_PAUSE_IMAGE при запуска pod'ов в podman (podman pod init)
 pause_image="$U7S_REGISTRY/$U7S_PAUSE_IMAGE"
-echo "Настройка использования образа $pause_image при запуска pod'ов в podman (podman pod init)"
+echo "$(gettext 'Configuring image usage') $pause_image $(gettext 'when starting pods in podman (podman pod init)')" >&2
 sed -i -e 's|#infra_image =.*|infra_image = "'$pause_image'"|' /usr/share/containers/containers.conf
 
 kubernetesClusterIP=$(getKubernetesClusterIP $FLAG_pod_service_cidr)
@@ -331,10 +334,10 @@ esac
 chown -R u7s-admin:u7s-admin /usr/libexec/cni /etc/cni/net.d/
 if ! machinectl shell u7s-admin@ /bin/sh /usr/libexec/podsec/u7s/bin/kubeadm.sh $cmd 2>/dev/null
 then
-  echo "Разворачивание кластера закончилось неудачно.
-Выполните вход в пользователя u7s-admin:
-machinectl shell u7s-admin@ /bin/bash
-и посмотрите статус командой 'systemctl --user u7s.service' и системные логи командами journalctl"
+  echo "$(gettext 'Cluster deployment failed')." >&2
+  echo "$(gettext 'Login as user u7s-admin'):" >&2
+  echo "machinectl shell u7s-admin@ /bin/bash"
+  echo "$(gettext 'and check the status with the command') 'systemctl --user u7s.service' $(gettext 'and system logs with command') journalctl" >&2
   pstree -pal
   exit 1
 fi
@@ -356,7 +359,7 @@ adminConf="/etc/kubernetes/admin.conf"
 
 if [ ! -s $adminConf ]
 then
-  echo "Конфигурационный файл администратора кластера не сформирован!"
+  echo "$(gettext 'The cluster administrator configuration file is not generated')!" >&2
   exit 2
 fi
 
