@@ -34,7 +34,6 @@ createImageMaker() {
   refs+=", \"lookaside-staging\": \"file:///var/sigstore/sigstore/\""
   refs+=", \"sigstore-staging\": \"file:///var/sigstore/sigstore/\"}"
   echo "{\"default-docker\":$refs}" | yq -y . > .config/containers/registries.d/default.yaml
-#   echo "{\"docker\":{\"registry.local\":$refs}}" | yq -y . > .config/containers/registries.d/sigstore_local.yaml
   chown -R $user:podman .
 
   su - -c 'gpg2 --full-generate-key'  $user
@@ -42,7 +41,6 @@ createImageMaker() {
   if [ $# -lt 1 ]
   then
     echo "$(gettext 'Public key not found')" >&2
-#     echo "Не найден открытый ключ"
     exit 1
   fi
   # Вытащить uid из ключа
