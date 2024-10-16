@@ -1,4 +1,8 @@
-podsec-create-imagemakeruser(1) -- create container image maker users ================================================= # # SYNOPSIS `podsec-create-imagemakeruser [username[@repo_path]] ...` ## DESCRIPTION The script creates container image maker users with the following rights: - change the password set by the containerization tool security administrator;
+podsec-create-imagemakeruser(1) -- create container image maker users ================================================= # # SYNOPSIS `podsec-create-imagemakeruser [username[@repo_path]] ...` 
+
+## DESCRIPTION 
+
+The script creates container image maker users with the following rights: - change the password set by the containerization tool security administrator;
 - create, modify, and delete container images.
 
 When creating each user, you must specify: - `user password`;
@@ -19,7 +23,9 @@ The script must be called after calling the `podsec-create-policy` script ## OPT
 
 - If the user is the only one and the path is not specified, then the `registry.local` path is accepted - If the user name is not specified, the name `imagemaker@registry.local` is accepted as the first parameter.
 
-## EXAMPLES `podsec-create-imagemakeruser immkk8s@registry.local/k8s-c10f1 imklocal@registry.local immkalt@registry.altlinux.org` Three users with signing rights are created: - `immkk8s` - local kubernetes images with the path `registry.local/k8s-c10f1`;
+## EXAMPLES 
+
+`podsec-create-imagemakeruser immkk8s@registry.local/k8s-c10f1 imklocal@registry.local immkalt@registry.altlinux.org` Three users with signing rights are created: - `immkk8s` - local kubernetes images with the path `registry.local/k8s-c10f1`;
 
 - `imklocal` - local `registry.local` images except kubernetes images - `immkalt` - registrar images `registry.altlinux.org` ## SECURITY CONSIDERATIONS - This script should only be run on a node with the `registry.local` , `sigstore-local` domains. If this is not the case, the script stops.
 
@@ -32,4 +38,6 @@ The script must be called after calling the `podsec-create-policy` script ## OPT
 - [Description of periodic integrity monitoring of container images and containerization tool settings](https://github.com/alt-cloud/podsec/tree/master/ImageSignatureVerification)
 
 
-## AUTHOR Aleksey Kostarev, Basealt LLC kaf@basealt.ru
+## AUTHOR 
+
+Aleksey Kostarev, Basealt LLC kaf@basealt.ru
