@@ -48,5 +48,5 @@ If containers are deployed in the system and you need to monitor file modificati
 
 ## AUTHOR
 
-Burykin Nikolay, ALT Linux Team, bne@altlinux.org
-Kostarev Alexey, ALT Linux Team, kaf@basealt.ru
+- Burykin Nikolay, ALT Linux Team, bne@altlinux.org
+- Kostarev Alexey, ALT Linux Team, kaf@basealt.ru
