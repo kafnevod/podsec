@@ -45,5 +45,5 @@ The script unbinds a role from a cluster or regular role created by the `podsec-
 
 ## AUTHOR
 
-Kostarev Alexey, Basealt SPO
+Kostarev Alexey, Basealt LLC
 kaf@basealt.ru
