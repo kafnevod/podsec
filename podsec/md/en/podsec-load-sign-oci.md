@@ -1,4 +1,4 @@
-podsec-load-sign-oci(1) -- unpacking images from a compressed `xz-oci-archive`, signing them and placing them on the registrar
+podsec-load-sign-oci(1) -- unpacking images from a compressed `xz-oci-archive`, signing them and placing them on the registry
 =================================
 
 ## SYNOPSIS
