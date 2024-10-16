@@ -55,5 +55,5 @@ If you need to change the script startup mode, edit the `OnCalendar` parameter o
 
 ## AUTHOR
 
-Aleksey Kostarev, Basealt SPO
+Aleksey Kostarev, Basealt LLC
 kaf@basealt.ru
