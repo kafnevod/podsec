@@ -119,5 +119,5 @@ In addition to monitoring access denials, other suspicious activity can be monit
 
 ## AUTHOR
 
-Alexey Kostarev, Basalt SPO
+Alexey Kostarev, Basalt LLC
 kaf@basealt.ru
