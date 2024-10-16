@@ -26,5 +26,5 @@ After the image is created, it is checked for vulnerabilities by the `trivy` ser
 
 ## AUTHOR
 
-Aleksey Kostarev, Basealt SPO
+Aleksey Kostarev, Basealt LLC
 kaf@basealt.ru
