@@ -88,5 +88,5 @@ k8s-user1:
 
 ## AUTHOR
 
-Kostarev Alexey, Basalt SPO
+Kostarev Alexey, Basalt LLC
 kaf@basealt.ru
