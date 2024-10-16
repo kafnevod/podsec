@@ -115,8 +115,9 @@ node/<host> untainted
 # kubectl apply -f https://k8s.io/examples/application/deployment.yaml
 ```
 
-After downloading the `nginx` images, check the status of the `deployment` and `Pods`:```
-# kubectl get deployments.apps,pods
+After downloading the `nginx` images, check the status of the `deployment` and `Pods`:
+```
+# kubectl get deployments.apps.pods
 NAME                               READY   UP-TO-DATE   AVAILABLE   AGE
 deployment.apps/nginx-deployment   2/2     2            2           5m34s
 
@@ -160,7 +161,8 @@ Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 </pre>
 
 
-3. Check the state of the process tree:<pre>
+3. Check the state of the process tree:
+<pre>
 # pstree
 ...
 ├─systemd─┬─(sd-pam)
@@ -200,7 +202,8 @@ daemonset.apps/kube-flannel-ds created
 Connection to the local host terminated.
 ```
 
-6. On the `master node`, run the command:```
+6. On the `master node`, run the command:
+```
 # kubectl get daemonsets.apps -A
 NAMESPACE      NAME              DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
 kube-flannel   kube-flannel-ds   2         2         2       2            1           <none>                   102s
