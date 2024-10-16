@@ -29,5 +29,5 @@ Script:
 
 ## AUTHOR
 
-Kostarev Alexey, Basealt SPO
+Kostarev Alexey, Basealt LLC
 kaf@basealt.ru
