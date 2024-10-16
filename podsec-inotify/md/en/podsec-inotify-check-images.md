@@ -25,23 +25,23 @@ The danger level is determined at startup by the flags:
 
 - for system logs:
 <pre>
-Level name | Level | Prefix | Flag | Recommended interval value
--------------|------------|-----------|------------------------
-emergency | 7 | Crash | `-a` | do not specify
-fatal | 6 | Fatal | `-f` | do not specify
-critical | 5 | Critical | `-c` | 100
-high | 4 | Heigh | `-h` | 0
-medium | 3 | Middle | `-m` | do not specify
-low | 2 | Low | `-l` | do not specify
-debug | 1 | Debug | `-d` | do not specify
+Level name |Level| Prefix   | Flag | Recommended interval value
+-----------|-----|----------|------|---------------------------
+emergency  | 7   | Crash    | `-a` | do not specify
+fatal      | 6   | Fatal    | `-f` | do not specify
+critical   | 5   | Critical | `-c` | 100
+high       | 4   | Heigh    | `-h` | 0
+medium     | 3   | Middle   | `-m` | do not specify
+low        | 2   | Low      | `-l` | do not specify
+debug      | 1   | Debug    | `-d` | do not specify
 </pre>
 
 - for the `icigna` server:
 <pre>
-Level name | Level | Prefix | Flag | Recommended interval value
----------------|------------|---------|-----------------------
-critical | 2 | Critical | `-c` | 100
-warning | 1 | Warning | `-w` | 0
+Level name |Level| Prefix   | Flag | Recommended interval value
+-----------|----------------|------|---------------------------
+critical   |  2  | Critical | `-c` | 100
+warning    |  1  | Warning  | `-w` | 0
 </pre>
 
 Any parameter may be missing. In this case, it is not considered when viewing the compliance of the received metric with the intervals.
@@ -64,12 +64,12 @@ Notes:
 Examples of possible formats:
 <pre>
 Interval format | Description of the trigger condition
------------------|--------------------------------------
-100 | metrica &lt; 0 || metrica &gt; 100 (outside the range 0-100)
-100: | metrica &lt; 100 (outside the range 100-ꝏ)
-~:100 | metrica &gt; 100 (outside the range -ꝏ-100)
-20-100 | metrica &lt; 20 || metrica &gt; 100 (outside the range 20-100)
-@20-100 | metrica &gt;= 20 && metrica &lt;= 100 (in the range 20-100)
+----------------|--------------------------------------
+100             | metrica &lt; 0 || metrica &gt; 100 (outside the range 0-100)
+100:            | metrica &lt; 100 (outside the range 100-ꝏ)
+~:100           | metrica &gt; 100 (outside the range -ꝏ-100)
+20-100          | metrica &lt; 20 || metrica &gt; 100 (outside the range 20-100)
+@20-100         | metrica &gt;= 20 && metrica &lt;= 100 (in the range 20-100)
 </pre>
 
 
@@ -110,12 +110,12 @@ The program exit code (which is processed on the `icigna` server side) is `0`.
 The log format for `nagios` depends on the level of detail specified by the `-v[vv]` flag (see [Verbose Output](https://nagios-plugins.org/doc/guidelines.html#AEN41)):
 <pre>
 Flag | Level
------------|--------
+-----|--------
 none | 0
--v | 1
--vv | 2
+-v   | 1
+-vv  | 2
 -vvv | 3
-... | 3
+...  | 3
 </pre>
 
 For all levels, a prefix message of the following format is generated:
@@ -186,5 +186,5 @@ If you need to change the script startup mode, edit the `OnCalendar` parameter o
 
 ## AUTHOR
 
-Kostarev Alexey, Basalt SPO
+Kostarev Alexey, Basalt LLC
 kaf@basealt.ru
