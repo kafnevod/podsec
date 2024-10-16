@@ -53,5 +53,5 @@ podsec-k8s-rbac-bindrole k8s-user1 role=clusterrole system:basic-user basic-user
 
 ## AUTHOR
 
-Kostarev Alexey, Basalt SPO
+Kostarev Alexey, Basalt LLC
 kaf@basealt.ru
