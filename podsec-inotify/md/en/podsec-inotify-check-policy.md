@@ -15,17 +15,18 @@ The check is based on the following parameters:
 
 - file `policy.json` settings of transports and access policies to registrars:
 <pre>
-User Control Parameter | Metric Weight    --------------------------------------------------------------------------------------------------------------------------|-------------
-having `defaultPolicy != reject`, but not included in the `podman_dev` group | 102
+User Control Parameter | Metric Weight
+-----------------------------------------------------------------------------------------------------------------------------|-------------
+having `defaultPolicy != reject`, but not included in the `podman_dev` group                                                 | 102
 not having `registry.local` in the list of registrars for which the presence of an electronic signature of images is checked | 103
-having registrars in the policy for which the presence of an electronic signature of images is not checked | 104
-having transports other than `docker` in the list of supported ones (transport for receiving images from the registrar) | 105
+having registrars in the policy for which the presence of an electronic signature of images is not checked                   | 104
+having transports other than `docker` in the list of supported ones (transport for receiving images from the registrar)      | 105
 </pre>
 
 - files for binding registrars to servers storing electronic signatures (default binding file `default.yaml` and registrar binding files `*.yaml` of the `registries.d` directory). Availability (number) of users:
 <pre>
-User Control Parameter | Metric Weight
-----------------------------------------------------------------------------------------------|-------------
+User Control Parameter                                                                    | Metric Weight
+------------------------------------------------------------------------------------------|-------------
 not using signature store `http://sigstore.local:81/sigstore/` as default signature store | 106
 </pre>
 
@@ -41,10 +42,10 @@ presence of users with images, but not included in the `podman` group | 101
     * presence of users of the `podman` group (excluding those in the `podman_dev` group):
 <pre>
 User control parameter | Metric weight
----------------------------------------------------------------------|-------------
-in the `wheel` group | 107
+-----------------------------------------------------------------------------|-------------
+in the `wheel` group                                                         | 107
 having the `.config/containers/` directory open for writing and modification | 90 * `share_of_offenders`
-not having the `.config/containers/storage.conf` configuration file | 90 * `share_of_offenders
+not having the `.config/containers/storage.conf` configuration file          | 90 * `share_of_offenders
 </pre>
 
 `share_of_violators` is calculated as: `number_of_violators / number_of_users_in_podman_group`
@@ -59,23 +60,23 @@ The danger level is determined at startup by the flags:
 
 - for system logs:
 <pre>
-Level name | Level | Prefix | Flag | Recommended interval value
--------------|------------|-----------|------------------------
-emergency | 7 | Crash | `-a` | do not specify
-fatal | 6 | Fatal | `-f` | do not specify
-critical | 5 | Critical | `-c` | 100
-high | 4 | Heigh | `-h` | 0
-average | 3 | Middle | `-m` | do not specify
-Low | 2 | Low | `-l` | do not specify
-Debug | 1 | Debug | `-d` | do not specify
+Level name |Level| Prefix   | Flag | Recommended interval value
+-----------|-----|----------|------|---------------------------
+emergency  | 7   | Crash    | `-a` | do not specify
+fatal      | 6   | Fatal    | `-f` | do not specify
+critical   | 5   | Critical | `-c` | 100
+high       | 4   | Heigh    | `-h` | 0
+average    | 3   | Middle   | `-m` | do not specify
+Low        | 2   | Low      | `-l` | do not specify
+Debug      | 1   | Debug    | `-d` | do not specify
 </pre>
 
 - for the `icigna` server:
 <pre>
-Level name | Level | Prefix | Flag | Recommended interval value
----------------|------------|---------|-----------------------
-Critical | 2 | Critical | `-c` | 100
-Warning | 1 | Warning | `-w` | 0
+Level name |Level|  Prefix  | Flag | Recommended interval value
+-----------|-----|----------|------|----------------------------
+Critical   | 2   | Critical | `-c` | 100
+Warning    | 1   | Warning  | `-w` | 0
 </pre>
 
 Any parameter may be missing. In this case, it is not considered when viewing the compliance of the received metric with the intervals.
@@ -98,12 +99,12 @@ Notes:
 Examples of possible formats:
 <pre>
 Interval format | Description of the trigger condition
------------------|--------------------------------------
-100 | metrica &lt; 0 || metrica &gt; 100 (outside the range 0-100)
-100: | metrica &lt; 100 (outside the range 100-ꝏ)
-~:100 | metrica &gt; 100 (outside the range -ꝏ-100)
-20-100 | metrica &lt; 20 || metrica &gt; 100 (outside the range 20-100)
-@20-100 | metrica &gt;= 20 && metrica &lt;= 100 (in the range 20-100)
+----------------|--------------------------------------
+100             | metrica &lt; 0 || metrica &gt; 100 (outside the range 0-100)
+100:            | metrica &lt; 100 (outside the range 100-ꝏ)
+~:100           | metrica &gt; 100 (outside the range -ꝏ-100)
+20-100          | metrica &lt; 20 || metrica &gt; 100 (outside the range 20-100)
+@20-100         | metrica &gt;= 20 && metrica &lt;= 100 (in the range 20-100)
 </pre>
 
 ### System logs
@@ -144,12 +145,12 @@ The program exit code (which is processed on the `icigna` server side) is `0`.
 The log format for `icigna` depends on the level of detail specified by the `-v[vv]` flag (see [Verbose Output](https://nagios-plugins.org/doc/guidelines.html#AEN41)):
 <pre>
 Flag | Level
------------|--------
+-----|--------
 none | 0
--v | 1
--vv | 2
+-v   | 1
+-vv  | 2
 -vvv | 3
-... | 3
+...  | 3
 </pre>
 
 For all levels, a prefix message of the following format is generated:
@@ -244,5 +245,5 @@ Program exit code is `2`.
 
 ## AUTHOR
 
-Kostarev Alexey, Basealt SPO
+Kostarev Alexey, Basealt LLC
 kaf@basealt.ru
