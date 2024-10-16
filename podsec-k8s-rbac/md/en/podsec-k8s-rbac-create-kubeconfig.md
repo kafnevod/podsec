@@ -44,5 +44,5 @@ The script in the `~username/.kube` directory does the following:
 
 ## AUTHOR
 
-Kostarev Alexey, Basealt SPO
+Kostarev Alexey, Basealt LLC
 kaf@basealt.ru
